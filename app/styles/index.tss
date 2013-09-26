@@ -1,0 +1,12 @@
+".container": {
+	navBarHidden: true, 
+	exitOnClose: true, 
+	fullscreen: false,
+	top: Alloy.Globals.theTop
+},
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+} 

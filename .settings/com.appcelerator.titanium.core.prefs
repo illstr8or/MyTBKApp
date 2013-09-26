@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/appid=com.appdacity.mytsd
+provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/name=Appdacity Dev Profile
+provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/uuid=5113596D-A8A0-4D31-A6CE-258EAC4EE834
+provisioning_profiles/development/94EBA7B3-7725-428B-B214-F244923EA18C/appid=*
+provisioning_profiles/development/94EBA7B3-7725-428B-B214-F244923EA18C/name=Team Dev Profile
+provisioning_profiles/development/94EBA7B3-7725-428B-B214-F244923EA18C/uuid=94EBA7B3-7725-428B-B214-F244923EA18C
