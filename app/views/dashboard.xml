@@ -1,11 +1,14 @@
 <Alloy>
 	<View id="mainView">
-		<!-- Need to redo this into a Window with leftNavButton, Title and rightNavButton -->
-		<!-- Not sure this will work for Android - Need to test -->
 		<View id="mainTopBar">
-			<View id="menuButton"><ImageView id="image" width="30dp" height="30dp" image="/menu-icon.png" /></View>
+			<View id="menuButton">
+				<ImageView id="btn" width="30dp" height="30dp" image="/menu-icon.png" />
+			</View>
+			<View id="mainTitle">
+				<Label id="mainLabel" text="myTBK" />
+			</View>
+			<View id="mainShare" width="30dp" height="30dp" />
 		</View>
-		<TableView>
-		</TableView>
+		<TableView></TableView>
 	</View>
 </Alloy>

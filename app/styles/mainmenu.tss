@@ -1,6 +1,6 @@
 "#menuView":{
 	layout : 'vertical',
-	backgroundColor : 'blue'
+	backgroundColor : '#0b0a2b'
 },
 "#menuTopBar":{
 	width : Ti.UI.FILL,
@@ -8,40 +8,124 @@
 	backgroundColor : '#0b0a2b',
 	layout : 'horizontal'
 },
-".tableRow":{
-	height : '50dp'
-},
-"#rowContainer":{
-	height : '30dp',
-	layout : 'horizontal'
-},
-".rowIcon":{
-	left : 5,
-	top : 7,
-	width : '20dp',
-	height : '20dp'
-},
-"#rowSkull":{
-	backgroundImage : '/21-skull.png'
-},
-"#rowGear":{
-	backgroundImage : '/19-gear.png'
-},
-"#rowPicFrame":{
-	backgroundImage : '/41-picture-frame.png'
-},
-".rowLabel":{
-	top : 7,
-	left : 10,
-	height : '20dp',
-	font:{
-		fontSize : '15dp'
-	},
-	color : '#000'
-	
-},
 ".menuTable":{
 	separatorStyle :'NONE',
-	separatorColor : 'transparent',
+	separatorColor : '#0b0a2b',
 	backgroundColor : '#0b0a2b'
+},
+".tableRow":{
+	height : '43dp',
+	backgroundImage : '/menu-row-item-bg-off.png',
+	backgroundRepeat : true,
+	selectedColor : '#284bff'
+},
+".profileRow":{
+	height : '75dp',
+	backgroundImage : '/menu-row-item-bg-profile-off.png',
+	backgroundRepeat : true,
+	selectedColor : '#284bff'
+},
+".tableHeader":{
+	height : '39dp',
+	width : Ti.UI.FILL,
+	layout : 'horizontal'
+},
+"#profileContainer":{
+	width : Ti.UI.FILL,
+	height : '75dp',
+	layout : 'horizontal'
+},
+"#rowContainer":{
+	width : Ti.UI.FILL,
+	height : '43dp',
+	layout : 'horizontal'
+},
+"#headContainer":{
+	width : Ti.UI.FILL,
+	height : '39dp',
+	backgroundImage : '/menu-header-item-bg.png',
+	backgroundRepeat : true,
+	layout : 'horizontal',
+	horizontalWrap : false
+},
+".rowIcon":{
+	left : '12dp',
+	top : '12dp',
+	width : '18dp',
+	height : '18dp',
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+},
+".rowImage":{
+	left : 0,
+	top : '1dp',
+	width : '69dp',
+	height : '73dp',
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+},
+"#headIcon":{
+	right : '4dp',
+	width : '18dp',
+	height : '18dp',
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	textAlign : Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	backgroundImage : '/menu-right-carat.png',
+	layout : 'horizontal'
+},
+"#rowEvents":{
+	backgroundImage : '/events-icon.png'
+},
+"#rowNotifications":{
+	backgroundImage : '/notifications-icon.png'
+},
+"#rowSchedule":{
+	backgroundImage : '/schedule-icon.png'
+},
+"#rowStudyGuides":{
+	backgroundImage : '/study-guides-icon.png'
+},
+"#rowReferAFriend":{
+	backgroundImage : '/refer-a-friend-icon.png'
+},
+"#rowLocation":{
+	backgroundImage : '/location-icon.png'
+},
+"#rowContact":{
+	backgroundImage : '/contact-icon.png'
+},
+"#rowProfile":{
+	backgroundImage : '/profile-pic-menu.png'
+},
+".rowLabel":{
+	left : '18dp',
+	height : '43dp',
+	font : {
+		fontSize : '18dp'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	color : '#fff'
+	
+},
+".rowHeader":{
+	left : '12dp',
+	width : Ti.UI.SIZE,
+	height : '39dp',
+	font : {
+		fontSize : '14dp'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	color : '#fff'
+	
+},
+".profileLabel":{
+	left : '18dp',
+	height : '75dp',
+	font : {
+		fontSize : '15dp'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	color : '#fff'
+	
 }

@@ -26,13 +26,43 @@ function Controller() {
         id: "menuButton"
     });
     $.__views.mainTopBar.add($.__views.menuButton);
-    $.__views.image = Ti.UI.createImageView({
-        id: "image",
+    $.__views.btn = Ti.UI.createImageView({
+        id: "btn",
         width: "30dp",
         height: "30dp",
         image: "/menu-icon.png"
     });
-    $.__views.menuButton.add($.__views.image);
+    $.__views.menuButton.add($.__views.btn);
+    $.__views.mainTitle = Ti.UI.createView({
+        width: Ti.UI.FILL,
+        height: "60dp",
+        layout: "horizontal",
+        right: "60dp",
+        id: "mainTitle"
+    });
+    $.__views.mainTopBar.add($.__views.mainTitle);
+    $.__views.mainLabel = Ti.UI.createLabel({
+        color: "#fff",
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL,
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+        verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+        font: {
+            fontSize: "20dp",
+            fontWeight: "bold"
+        },
+        id: "mainLabel",
+        text: "myTBK"
+    });
+    $.__views.mainTitle.add($.__views.mainLabel);
+    $.__views.mainShare = Ti.UI.createView({
+        width: "30dp",
+        height: "30dp",
+        layout: "horizontal",
+        backgroundImage: "/menubutton.png",
+        id: "mainShare"
+    });
+    $.__views.mainTopBar.add($.__views.mainShare);
     $.__views.__alloyId0 = Ti.UI.createTableView({
         id: "__alloyId0"
     });

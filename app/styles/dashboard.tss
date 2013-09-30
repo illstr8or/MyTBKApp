@@ -11,4 +11,27 @@
 "#menuButton":{
 	width : '60dp',
 	height : '60dp'
+},
+"#mainTitle":{
+	width : Ti.UI.FILL,
+	height : '60dp',
+	layout : 'horizontal',
+	right : '60dp'
+},
+"#mainLabel":{
+	color : '#fff',
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font : {
+		fontSize : '20dp',
+		fontWeight : 'bold'
+	}
+},
+"#mainShare":{
+	width : '60dp',
+	height : '60dp',
+	layout : 'horizontal',
+	backgroundImage : '/menubutton.png'
 }

@@ -2,41 +2,67 @@
 	<View id="menuView">
 		<View id="menuTopBar"/>
 		<TableView class="menuTable" id="menuTable">
-			<TableViewRow class="tableRow" id="row1">
-				<View id="rowContainer">
-					<View id="rowGear" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Some menu option</Label>
+			<TableViewRow class="profileRow" id="row0">
+				<View id="profileContainer">
+					<View id="rowProfile" class="rowImage"/><Label id="profileLabel" class="profileLabel">Gena Nardini-Eiseman</Label>
 				</View>
 			</TableViewRow>
-			<TableViewRow class="tableRow" id="row2">
-				<View id="rowContainer">
-					<View id="rowSkull" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Another menu option</Label>
-				</View>
-			</TableViewRow>
-			<TableViewRow class="tableRow" id="row3">
-				<View id="rowContainer">
-					<View id="rowPicFrame" class="rowIcon"/><Label id="rowLabel" class="rowLabel">Configure options</Label>
-				</View>
-			</TableViewRow>
+			<TableViewSection>
+				<HeaderView class="tableHeader">
+					<View id="headContainer" onClick="doHeaderClick">
+						<Label id="rowHeader1" class="rowHeader">myTBK</Label><View id="headIcon"/>
+					</View>
+				</HeaderView>
+				<TableViewRow class="tableRow" id="row1">
+					<View id="rowContainer">
+						<View id="rowEvents" class="rowIcon"/><Label id="rowLabel" class="rowLabel">events</Label>
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="row2">
+					<View id="rowContainer">
+						<View id="rowNotifications" class="rowIcon"/><Label id="rowLabel" class="rowLabel">notifications</Label>
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="row3">
+					<View id="rowContainer">
+						<View id="rowSchedule" class="rowIcon"/><Label id="rowLabel" class="rowLabel">schedule</Label>
+					</View>
+				</TableViewRow>
+			</TableViewSection>
+			<TableViewSection>
+				<HeaderView class="tableHeader">
+					<View id="headContainer">
+						<Label id="rowHeader2" class="rowHeader">TRAINING</Label>
+					</View>
+				</HeaderView>
+				<TableViewRow class="tableRow" id="row4">
+					<View id="rowContainer">
+						<View id="rowStudyGuides" class="rowIcon"/><Label id="rowLabel" class="rowLabel">study guides</Label>
+					</View>
+				</TableViewRow>
+			</TableViewSection>
+			<TableViewSection>
+				<HeaderView class="tableHeader">
+					<View id="headContainer">
+						<Label id="rowHeader3" class="rowHeader">INFORMATION</Label>
+					</View>
+				</HeaderView>
+				<TableViewRow class="tableRow" id="row5">
+					<View id="rowContainer">
+						<View id="rowReferAFriend" class="rowIcon"/><Label id="rowLabel" class="rowLabel">refer a friend</Label>
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="row6">
+					<View id="rowContainer">
+						<View id="rowLocation" class="rowIcon"/><Label id="rowLabel" class="rowLabel">location</Label>
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="row7">
+					<View id="rowContainer">
+						<View id="rowContact" class="rowIcon"/><Label id="rowLabel" class="rowLabel">contact</Label>
+					</View>
+				</TableViewRow>
+			</TableViewSection>
 		</TableView>
-		<!-->
-		<TableView filterAttribute="title">
-			<SearchBar platform="android,ios"/>
-			<TableViewSection headerTitle="Section 1">
-				<TableViewRow title="Row 1"/>
-				<TableViewRow title="Row 2"/>
-				<TableViewRow title="Row 3"/>
-			</TableViewSection>
-			<TableViewSection headerTitle="Section 2">
-				<TableViewRow title="Row 1"/>
-				<TableViewRow title="Row 2"/>
-				<TableViewRow title="Row 3"/>
-			</TableViewSection>
-			<TableViewSection headerTitle="Section 3">
-				<TableViewRow title="Row 1"/>
-				<TableViewRow title="Row 2"/>
-				<TableViewRow title="Row 3"/>
-			</TableViewSection>
-		</TableView>
-		<-->
 	</View>
 </Alloy>
