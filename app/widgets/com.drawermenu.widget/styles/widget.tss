@@ -1,9 +1,9 @@
-"#menuview":{
+"#drawermenuview":{
 	backgroundColor : '#0b0a2b',
 	height : Ti.UI.FILL,
 	width : Ti.UI.FILL
 },
-"#mainview":{
+"#drawermainview":{
 	backgroundColor : 'white',
 	height : Ti.UI.FILL,
 	width : Ti.UI.FILL

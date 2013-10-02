@@ -17,12 +17,13 @@ function Controller() {
         height: "60dp",
         backgroundColor: "#0b0a2b",
         layout: "horizontal",
+        horizontalWrap: false,
         id: "mainTopBar"
     });
     $.__views.mainView.add($.__views.mainTopBar);
     $.__views.menuButton = Ti.UI.createView({
-        width: "60dp",
-        height: "60dp",
+        width: "18%",
+        height: Ti.UI.FILL,
         id: "menuButton"
     });
     $.__views.mainTopBar.add($.__views.menuButton);
@@ -33,17 +34,9 @@ function Controller() {
         image: "/menu-icon.png"
     });
     $.__views.menuButton.add($.__views.btn);
-    $.__views.mainTitle = Ti.UI.createView({
-        width: Ti.UI.FILL,
-        height: "60dp",
-        layout: "horizontal",
-        right: "60dp",
-        id: "mainTitle"
-    });
-    $.__views.mainTopBar.add($.__views.mainTitle);
     $.__views.mainLabel = Ti.UI.createLabel({
         color: "#fff",
-        width: Ti.UI.FILL,
+        width: "63%",
         height: Ti.UI.FILL,
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
@@ -54,21 +47,29 @@ function Controller() {
         id: "mainLabel",
         text: "myTBK"
     });
-    $.__views.mainTitle.add($.__views.mainLabel);
+    $.__views.mainTopBar.add($.__views.mainLabel);
     $.__views.mainShare = Ti.UI.createView({
-        width: "30dp",
-        height: "30dp",
-        layout: "horizontal",
-        backgroundImage: "/menubutton.png",
+        width: "18%",
+        height: Ti.UI.FILL,
         id: "mainShare"
     });
     $.__views.mainTopBar.add($.__views.mainShare);
+    $.__views.share = Ti.UI.createImageView({
+        id: "share",
+        width: "30dp",
+        height: "30dp",
+        image: "/share-icon.png"
+    });
+    $.__views.mainShare.add($.__views.share);
     $.__views.__alloyId0 = Ti.UI.createTableView({
         id: "__alloyId0"
     });
     $.__views.mainView.add($.__views.__alloyId0);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.mainShare.addEventListener("click", function() {
+        alert("Share this view!");
+    });
     _.extend($, exports);
 }
 

@@ -1,4 +1,30 @@
-
-".container" : {
-  
+"#profile":{
+	layout : 'vertical',
+	backgroundColor : '#cacaca'
+},
+"#mainTopBar":{
+	width : Ti.UI.FILL,
+	height : '60dp',
+	backgroundColor : '#0b0a2b',
+	layout : 'horizontal',
+	horizontalWrap : false
+},
+"#menuButton":{
+	width : '18%',
+	height : Ti.UI.FILL
+},
+"#mainShare":{
+	width : '18%',
+	height : Ti.UI.FILL
+},
+"#mainLabel":{
+	color : '#fff',
+	width : '63%',
+	height : Ti.UI.FILL,
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font : {
+		fontSize : '20dp',
+		fontWeight : 'bold'
+	}
 }

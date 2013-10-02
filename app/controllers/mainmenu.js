@@ -1,5 +1,5 @@
 function doClick(e) {
-	alert(e.rowData.title);
+	alert(e.row.title);
 }
 
 function doHeaderClick(e) {

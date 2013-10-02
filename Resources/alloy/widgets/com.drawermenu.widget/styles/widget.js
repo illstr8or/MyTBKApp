@@ -21,7 +21,7 @@ module.exports = [ {
 }, {
     isId: true,
     priority: 100000.0005,
-    key: "menuview",
+    key: "drawermenuview",
     style: {
         backgroundColor: "#0b0a2b",
         height: Ti.UI.FILL,
@@ -30,7 +30,7 @@ module.exports = [ {
 }, {
     isId: true,
     priority: 100000.0006,
-    key: "mainview",
+    key: "drawermainview",
     style: {
         backgroundColor: "white",
         height: Ti.UI.FILL,

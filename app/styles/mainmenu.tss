@@ -48,6 +48,13 @@
 	layout : 'horizontal',
 	horizontalWrap : false
 },
+"#settingsButton":{
+	left : '12dp',
+	width : '60dp',
+	height : '60dp',
+	layout : 'horizontal',
+	horizontalWrap : false
+},
 ".rowIcon":{
 	left : '12dp',
 	top : '12dp',
@@ -61,15 +68,6 @@
 	width : '69dp',
 	height : '73dp',
 	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
-},
-"#headIcon":{
-	right : '4dp',
-	width : '18dp',
-	height : '18dp',
-	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-	textAlign : Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	backgroundImage : '/menu-right-carat.png',
-	layout : 'horizontal'
 },
 "#rowEvents":{
 	backgroundImage : '/events-icon.png'
@@ -94,6 +92,11 @@
 },
 "#rowProfile":{
 	backgroundImage : '/profile-pic-menu.png'
+},
+"#settingsBtn":{
+	width : '30dp',
+	height : '30dp',
+	image : '/settings-icon.png' 
 },
 ".rowLabel":{
 	left : '18dp',
@@ -121,8 +124,9 @@
 ".profileLabel":{
 	left : '18dp',
 	height : '75dp',
+	minimumFontSize : '14dp',
 	font : {
-		fontSize : '15dp'
+		fontSize : '16dp'
 	},
 	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
 	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,

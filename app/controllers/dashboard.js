@@ -7,3 +7,6 @@
 
 // nav bar title text should me medium font weight at 34 px size, white
 
+$.mainShare.addEventListener('click', function shareInfo(e){
+	alert("Share this view!");
+});

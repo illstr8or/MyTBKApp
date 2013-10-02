@@ -1,7 +1,4 @@
 function Controller() {
-    function doHeaderClick() {
-        alert("header");
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "mainmenu";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -9,7 +6,6 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __defers = {};
     $.__views.menuView = Ti.UI.createView({
         layout: "vertical",
         backgroundColor: "#0b0a2b",
@@ -24,22 +20,42 @@ function Controller() {
         id: "menuTopBar"
     });
     $.__views.menuView.add($.__views.menuTopBar);
-    $.__views.row0 = Ti.UI.createTableViewRow({
+    $.__views.settingsButton = Ti.UI.createView({
+        left: "12dp",
+        width: "60dp",
+        height: "60dp",
+        layout: "horizontal",
+        horizontalWrap: false,
+        id: "settingsButton"
+    });
+    $.__views.menuTopBar.add($.__views.settingsButton);
+    $.__views.settingsBtn = Ti.UI.createImageView({
+        width: "30dp",
+        height: "30dp",
+        image: "/settings-icon.png",
+        id: "settingsBtn"
+    });
+    $.__views.settingsButton.add($.__views.settingsBtn);
+    $.__views.profileView = Ti.UI.createTableViewSection({
+        id: "profileView"
+    });
+    var __alloyId2 = [];
+    __alloyId2.push($.__views.profileView);
+    $.__views.profile = Ti.UI.createTableViewRow({
         height: "75dp",
         backgroundImage: "/menu-row-item-bg-profile-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row0"
+        id: "profile"
     });
-    var __alloyId2 = [];
-    __alloyId2.push($.__views.row0);
+    $.__views.profileView.add($.__views.profile);
     $.__views.profileContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "75dp",
         layout: "horizontal",
         id: "profileContainer"
     });
-    $.__views.row0.add($.__views.profileContainer);
+    $.__views.profile.add($.__views.profileContainer);
     $.__views.rowProfile = Ti.UI.createView({
         left: 0,
         top: "1dp",
@@ -54,13 +70,14 @@ function Controller() {
         color: "#fff",
         left: "18dp",
         height: "75dp",
+        minimumFontSize: "14dp",
         font: {
-            fontSize: "18dp"
+            fontSize: "16dp"
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "Gena Nardini-Eiseman",
-        id: "profileLabel"
+        id: "profileLabel",
+        text: "Gena Nardini-Eiseman"
     });
     $.__views.profileContainer.add($.__views.profileLabel);
     $.__views.__alloyId3 = Ti.UI.createTableViewSection({
@@ -76,7 +93,6 @@ function Controller() {
         horizontalWrap: false,
         id: "headContainer"
     });
-    doHeaderClick ? $.__views.headContainer.addEventListener("click", doHeaderClick) : __defers["$.__views.headContainer!click!doHeaderClick"] = true;
     $.__views.rowHeader1 = Ti.UI.createLabel({
         color: "#fff",
         left: "12dp",
@@ -87,37 +103,26 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "myTBK",
-        id: "rowHeader1"
+        id: "rowHeader1",
+        text: "myTBK"
     });
     $.__views.headContainer.add($.__views.rowHeader1);
-    $.__views.headIcon = Ti.UI.createView({
-        right: "4dp",
-        width: "18dp",
-        height: "18dp",
-        verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-        backgroundImage: "/menu-right-carat.png",
-        layout: "horizontal",
-        id: "headIcon"
-    });
-    $.__views.headContainer.add($.__views.headIcon);
     $.__views.__alloyId3.headerView = $.__views.headContainer;
-    $.__views.row1 = Ti.UI.createTableViewRow({
+    $.__views.events = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row1"
+        id: "events"
     });
-    $.__views.__alloyId3.add($.__views.row1);
+    $.__views.__alloyId3.add($.__views.events);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row1.add($.__views.rowContainer);
+    $.__views.events.add($.__views.rowContainer);
     $.__views.rowEvents = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -137,25 +142,25 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "events",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "events"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.row2 = Ti.UI.createTableViewRow({
+    $.__views.notifications = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row2"
+        id: "notifications"
     });
-    $.__views.__alloyId3.add($.__views.row2);
+    $.__views.__alloyId3.add($.__views.notifications);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row2.add($.__views.rowContainer);
+    $.__views.notifications.add($.__views.rowContainer);
     $.__views.rowNotifications = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -175,25 +180,25 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "notifications",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "notifications"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.row3 = Ti.UI.createTableViewRow({
+    $.__views.schedule = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row3"
+        id: "schedule"
     });
-    $.__views.__alloyId3.add($.__views.row3);
+    $.__views.__alloyId3.add($.__views.schedule);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row3.add($.__views.rowContainer);
+    $.__views.schedule.add($.__views.rowContainer);
     $.__views.rowSchedule = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -213,8 +218,8 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "schedule",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "schedule"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
     $.__views.__alloyId5 = Ti.UI.createTableViewSection({
@@ -240,26 +245,26 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "TRAINING",
-        id: "rowHeader2"
+        id: "rowHeader2",
+        text: "TRAINING"
     });
     $.__views.headContainer.add($.__views.rowHeader2);
     $.__views.__alloyId5.headerView = $.__views.headContainer;
-    $.__views.row4 = Ti.UI.createTableViewRow({
+    $.__views.studyguides = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row4"
+        id: "studyguides"
     });
-    $.__views.__alloyId5.add($.__views.row4);
+    $.__views.__alloyId5.add($.__views.studyguides);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row4.add($.__views.rowContainer);
+    $.__views.studyguides.add($.__views.rowContainer);
     $.__views.rowStudyGuides = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -279,8 +284,8 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "study guides",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "study guides"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
     $.__views.__alloyId7 = Ti.UI.createTableViewSection({
@@ -306,26 +311,26 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "INFORMATION",
-        id: "rowHeader3"
+        id: "rowHeader3",
+        text: "INFORMATION"
     });
     $.__views.headContainer.add($.__views.rowHeader3);
     $.__views.__alloyId7.headerView = $.__views.headContainer;
-    $.__views.row5 = Ti.UI.createTableViewRow({
+    $.__views.referafriend = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row5"
+        id: "referafriend"
     });
-    $.__views.__alloyId7.add($.__views.row5);
+    $.__views.__alloyId7.add($.__views.referafriend);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row5.add($.__views.rowContainer);
+    $.__views.referafriend.add($.__views.rowContainer);
     $.__views.rowReferAFriend = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -345,25 +350,25 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "refer a friend",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "refer a friend"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.row6 = Ti.UI.createTableViewRow({
+    $.__views.location = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row6"
+        id: "location"
     });
-    $.__views.__alloyId7.add($.__views.row6);
+    $.__views.__alloyId7.add($.__views.location);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row6.add($.__views.rowContainer);
+    $.__views.location.add($.__views.rowContainer);
     $.__views.rowLocation = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -383,25 +388,25 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "location",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "location"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.row7 = Ti.UI.createTableViewRow({
+    $.__views.contact = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
         backgroundRepeat: true,
         selectedColor: "#284bff",
-        id: "row7"
+        id: "contact"
     });
-    $.__views.__alloyId7.add($.__views.row7);
+    $.__views.__alloyId7.add($.__views.contact);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
         layout: "horizontal",
         id: "rowContainer"
     });
-    $.__views.row7.add($.__views.rowContainer);
+    $.__views.contact.add($.__views.rowContainer);
     $.__views.rowContact = Ti.UI.createView({
         left: "12dp",
         top: "12dp",
@@ -421,8 +426,8 @@ function Controller() {
         },
         textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
-        text: "contact",
-        id: "rowLabel"
+        id: "rowLabel",
+        text: "contact"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
     $.__views.menuTable = Ti.UI.createTableView({
@@ -435,7 +440,6 @@ function Controller() {
     $.__views.menuView.add($.__views.menuTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.headContainer!click!doHeaderClick"] && $.__views.headContainer.addEventListener("click", doHeaderClick);
     _.extend($, exports);
 }
 

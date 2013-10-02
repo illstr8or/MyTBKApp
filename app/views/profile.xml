@@ -1,4 +1,14 @@
 <Alloy>
-	<View class="container">
+	<View id="profile">
+		<View id="mainTopBar">
+			<View id="menuButton">
+				<ImageView id="btn" width="30dp" height="30dp" image="/menu-icon.png" />
+			</View>
+			<Label id="mainLabel" text="Profile" />
+			<View id="mainShare">
+				<ImageView id="share" width="30dp" height="30dp" image="/share-icon.png" />
+			</View>
+		</View>
+		<TableView></TableView>
 	</View>
 </Alloy>

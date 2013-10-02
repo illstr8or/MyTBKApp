@@ -1,10 +1,10 @@
 <Alloy>
-	<View id="mainView">
+	<View id="studyguides">
 		<View id="mainTopBar">
 			<View id="menuButton">
 				<ImageView id="btn" width="30dp" height="30dp" image="/menu-icon.png" />
 			</View>
-			<Label id="mainLabel" text="myTBK" />
+			<Label id="mainLabel" text="Study Guides" />
 			<View id="mainShare">
 				<ImageView id="share" width="30dp" height="30dp" image="/share-icon.png" />
 			</View>

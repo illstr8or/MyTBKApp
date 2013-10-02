@@ -1,65 +1,71 @@
 <Alloy>
 	<View id="menuView">
-		<View id="menuTopBar"/>
+		<View id="menuTopBar">
+			<View id="settingsButton">
+				<ImageView id="settingsBtn"/>
+			</View>
+		</View>
 		<TableView class="menuTable" id="menuTable">
-			<TableViewRow class="profileRow" id="row0">
-				<View id="profileContainer">
-					<View id="rowProfile" class="rowImage"/><Label id="profileLabel" class="profileLabel">Gena Nardini-Eiseman</Label>
-				</View>
-			</TableViewRow>
-			<TableViewSection>
-				<HeaderView class="tableHeader">
-					<View id="headContainer" onClick="doHeaderClick">
-						<Label id="rowHeader1" class="rowHeader">myTBK</Label><View id="headIcon"/>
-					</View>
-				</HeaderView>
-				<TableViewRow class="tableRow" id="row1">
-					<View id="rowContainer">
-						<View id="rowEvents" class="rowIcon"/><Label id="rowLabel" class="rowLabel">events</Label>
-					</View>
-				</TableViewRow>
-				<TableViewRow class="tableRow" id="row2">
-					<View id="rowContainer">
-						<View id="rowNotifications" class="rowIcon"/><Label id="rowLabel" class="rowLabel">notifications</Label>
-					</View>
-				</TableViewRow>
-				<TableViewRow class="tableRow" id="row3">
-					<View id="rowContainer">
-						<View id="rowSchedule" class="rowIcon"/><Label id="rowLabel" class="rowLabel">schedule</Label>
+			<TableViewSection id="profileView">
+				<TableViewRow class="profileRow" id="profile">
+					<View id="profileContainer">
+						<View id="rowProfile" class="rowImage"/><Label id="profileLabel" class="profileLabel" text="Gena Nardini-Eiseman" />
 					</View>
 				</TableViewRow>
 			</TableViewSection>
 			<TableViewSection>
 				<HeaderView class="tableHeader">
 					<View id="headContainer">
-						<Label id="rowHeader2" class="rowHeader">TRAINING</Label>
+						<Label id="rowHeader1" class="rowHeader" text="myTBK" />
 					</View>
 				</HeaderView>
-				<TableViewRow class="tableRow" id="row4">
+				<TableViewRow class="tableRow" id="events">
 					<View id="rowContainer">
-						<View id="rowStudyGuides" class="rowIcon"/><Label id="rowLabel" class="rowLabel">study guides</Label>
+						<View id="rowEvents" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="events" />
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="notifications">
+					<View id="rowContainer">
+						<View id="rowNotifications" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="notifications" />
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="schedule">
+					<View id="rowContainer">
+						<View id="rowSchedule" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="schedule" />
 					</View>
 				</TableViewRow>
 			</TableViewSection>
 			<TableViewSection>
 				<HeaderView class="tableHeader">
 					<View id="headContainer">
-						<Label id="rowHeader3" class="rowHeader">INFORMATION</Label>
+						<Label id="rowHeader2" class="rowHeader" text="TRAINING" />
 					</View>
 				</HeaderView>
-				<TableViewRow class="tableRow" id="row5">
+				<TableViewRow class="tableRow" id="studyguides">
 					<View id="rowContainer">
-						<View id="rowReferAFriend" class="rowIcon"/><Label id="rowLabel" class="rowLabel">refer a friend</Label>
+						<View id="rowStudyGuides" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="study guides" />
 					</View>
 				</TableViewRow>
-				<TableViewRow class="tableRow" id="row6">
+			</TableViewSection>
+			<TableViewSection>
+				<HeaderView class="tableHeader">
+					<View id="headContainer">
+						<Label id="rowHeader3" class="rowHeader" text="INFORMATION" />
+					</View>
+				</HeaderView>
+				<TableViewRow class="tableRow" id="referafriend">
 					<View id="rowContainer">
-						<View id="rowLocation" class="rowIcon"/><Label id="rowLabel" class="rowLabel">location</Label>
+						<View id="rowReferAFriend" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="refer a friend" />
 					</View>
 				</TableViewRow>
-				<TableViewRow class="tableRow" id="row7">
+				<TableViewRow class="tableRow" id="location">
 					<View id="rowContainer">
-						<View id="rowContact" class="rowIcon"/><Label id="rowLabel" class="rowLabel">contact</Label>
+						<View id="rowLocation" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="location" />
+					</View>
+				</TableViewRow>
+				<TableViewRow class="tableRow" id="contact">
+					<View id="rowContainer">
+						<View id="rowContact" class="rowIcon"/><Label id="rowLabel" class="rowLabel" text="contact" />
 					</View>
 				</TableViewRow>
 			</TableViewSection>

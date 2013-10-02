@@ -15,10 +15,16 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.drawermenuview = Ti.UI.createView({
+        backgroundColor: "#0b0a2b",
+        height: Ti.UI.FILL,
+        width: Ti.UI.FILL,
         id: "drawermenuview"
     });
     $.__views.drawermenuview && $.addTopLevelView($.__views.drawermenuview);
     $.__views.drawermainview = Ti.UI.createView({
+        backgroundColor: "white",
+        height: Ti.UI.FILL,
+        width: Ti.UI.FILL,
         id: "drawermainview"
     });
     $.__views.drawermainview && $.addTopLevelView($.__views.drawermainview);
