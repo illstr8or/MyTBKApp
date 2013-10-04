@@ -1,17 +1,17 @@
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "studyguides";
+    this.__controllerPath = "location";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.studyguides = Ti.UI.createView({
+    $.__views.location = Ti.UI.createView({
         layout: "vertical",
-        backgroundColor: "#d2d9fc",
-        id: "studyguides"
+        backgroundColor: "#284bff",
+        id: "location"
     });
-    $.__views.studyguides && $.addTopLevelView($.__views.studyguides);
+    $.__views.location && $.addTopLevelView($.__views.location);
     $.__views.mainTopBar = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "60dp",
@@ -20,7 +20,7 @@ function Controller() {
         horizontalWrap: false,
         id: "mainTopBar"
     });
-    $.__views.studyguides.add($.__views.mainTopBar);
+    $.__views.location.add($.__views.mainTopBar);
     $.__views.menuButton = Ti.UI.createView({
         width: "18%",
         height: Ti.UI.FILL,
@@ -45,7 +45,7 @@ function Controller() {
             fontWeight: "bold"
         },
         id: "mainLabel",
-        text: "Study Guides"
+        text: "Location"
     });
     $.__views.mainTopBar.add($.__views.mainLabel);
     $.__views.mainShare = Ti.UI.createView({
@@ -61,10 +61,34 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    $.__views.__alloyId12 = Ti.UI.createTableView({
-        id: "__alloyId12"
+    var __alloyId2 = [];
+    $.__views.annotation1 = Ti.Map.createAnnotation({
+        animate: true,
+        pincolor: Ti.Map.ANNOTATION_RED,
+        title: "TBK",
+        latitude: 41.809936,
+        longitude: -87.996254,
+        id: "annotation1"
     });
-    $.__views.studyguides.add($.__views.__alloyId12);
+    __alloyId2.push($.__views.annotation1);
+    $.__views.map = Ti.Map.createView({
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL,
+        region: {
+            latitude: 41.809936,
+            latitudeDelta: .01,
+            longitude: -87.996254,
+            longitudeDelta: .01
+        },
+        top: "5dp",
+        left: "5dp",
+        right: "5dp",
+        bottom: "5dp",
+        annotations: __alloyId2,
+        ns: Ti.Map,
+        id: "map"
+    });
+    $.__views.location.add($.__views.map);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.mainShare.addEventListener("click", function() {

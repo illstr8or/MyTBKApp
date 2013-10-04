@@ -1,6 +1,6 @@
 "#profile":{
 	layout : 'vertical',
-	backgroundColor : '#cacaca'
+	backgroundColor : '#d2d9fc'
 },
 "#mainTopBar":{
 	width : Ti.UI.FILL,

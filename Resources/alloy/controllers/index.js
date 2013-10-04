@@ -9,6 +9,24 @@ function Controller() {
 
               case "studyguides":
                 currentView = studyguides.getView();
+                break;
+
+              case "contact":
+                currentView = contact.getView();
+                break;
+
+              case "location":
+                currentView = location.getView();
+                break;
+
+              case "referafriend":
+                currentView = referafriend.getView();
+                break;
+
+              case "events":
+              case "notifications":
+              case "schedule":
+                currentView = mainView.getView();
             }
             $.drawermenu.drawermainview.add(currentView);
         }
@@ -59,6 +77,24 @@ function Controller() {
         w: "60dp"
     }));
     studyguides.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
+    var location = controls.getLocationView();
+    location.menuButton.add(controls.getMenuButton({
+        h: "60dp",
+        w: "60dp"
+    }));
+    location.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
+    var contact = controls.getContactView();
+    contact.menuButton.add(controls.getMenuButton({
+        h: "60dp",
+        w: "60dp"
+    }));
+    contact.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
+    var referafriend = controls.getReferAFriendView();
+    referafriend.menuButton.add(controls.getMenuButton({
+        h: "60dp",
+        w: "60dp"
+    }));
+    referafriend.menuButton.addEventListener("click", $.drawermenu.showhidemenu);
     menuView.menuTable.addEventListener("click", function(e) {
         $.drawermenu.showhidemenu();
         rowSelect(e);

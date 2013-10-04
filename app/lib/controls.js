@@ -20,6 +20,21 @@ exports.getStudyGuidesView = function(){
 	return study;
 };
 
+exports.getReferAFriendView = function(){
+	var refer = Alloy.createController('referafriend');
+	return refer;
+};
+
+exports.getLocationView = function(){
+	var locate = Alloy.createController('location');
+	return locate;
+};
+
+exports.getContactView = function(){
+	var contact = Alloy.createController('contact');
+	return contact;
+};
+
 exports.getMenuButton = function(args){
 	var view = Ti.UI.createView({
 		height: args.h,

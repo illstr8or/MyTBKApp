@@ -1,7 +1,7 @@
 function WPATH(s) {
     var index = s.lastIndexOf("/");
     var path = -1 === index ? "com.drawermenu.widget/" + s : s.substring(0, index) + "/com.drawermenu.widget/" + s.substring(index + 1);
-    return path;
+    return true && 0 !== path.indexOf("/") ? "/" + path : path;
 }
 
 module.exports = [ {
@@ -19,8 +19,16 @@ module.exports = [ {
         color: "#000"
     }
 }, {
+    isApi: true,
+    priority: 1000.0003,
+    key: "Annotation",
+    style: {
+        animate: true,
+        pincolor: Ti.Map.ANNOTATION_RED
+    }
+}, {
     isId: true,
-    priority: 100000.0005,
+    priority: 100000.0006,
     key: "drawermenuview",
     style: {
         backgroundColor: "#0b0a2b",
@@ -29,7 +37,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0006,
+    priority: 100000.0007,
     key: "drawermainview",
     style: {
         backgroundColor: "white",
@@ -38,7 +46,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0007,
+    priority: 100000.0008,
     key: "mainviewheader",
     style: {
         top: "0",
@@ -48,7 +56,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0008,
+    priority: 100000.0009,
     key: "menubutton",
     style: {
         left: "0",

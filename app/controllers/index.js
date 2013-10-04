@@ -44,6 +44,36 @@ studyguides.menuButton.addEventListener('click', $.drawermenu.showhidemenu); // 
 // ----
 
 
+// get location view as object
+var location = controls.getLocationView();
+location.menuButton.add(controls.getMenuButton({
+	h: '60dp',
+	w: '60dp'
+}));
+location.menuButton.addEventListener('click', $.drawermenu.showhidemenu); // method is exposed by widget
+// ----
+
+
+// get contact view as object
+var contact = controls.getContactView();
+contact.menuButton.add(controls.getMenuButton({
+	h: '60dp',
+	w: '60dp'
+}));
+contact.menuButton.addEventListener('click', $.drawermenu.showhidemenu); // method is exposed by widget
+// ----
+
+
+// get refer a friend view as object
+var referafriend = controls.getReferAFriendView();
+referafriend.menuButton.add(controls.getMenuButton({
+	h: '60dp',
+	w: '60dp'
+}));
+referafriend.menuButton.addEventListener('click', $.drawermenu.showhidemenu); // method is exposed by widget
+// ----
+
+
 function rowSelect(e) {
 	if (currentView.id != e.row.id) {
 		$.drawermenu.drawermainview.remove(currentView);
@@ -58,6 +88,32 @@ function rowSelect(e) {
 			case 'studyguides' :
 			
 				currentView = studyguides.getView();
+				
+				break;
+				
+			case 'contact' :
+			
+				currentView = contact.getView();
+				
+				break;
+				
+			case 'location' :
+			
+				currentView = location.getView();
+				
+				break;
+				
+			case 'referafriend' :
+			
+				currentView = referafriend.getView();
+				
+				break;
+				
+			case 'events' :
+			case 'notifications' :
+			case 'schedule' :
+			
+				currentView = mainView.getView();
 				
 				break;
 		

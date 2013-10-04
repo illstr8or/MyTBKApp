@@ -1,6 +1,6 @@
 "#mainView":{
 	layout : 'vertical',
-	backgroundColor : '#cacaca'
+	backgroundColor : '#d2d9fc'
 },
 "#mainTopBar":{
 	width : Ti.UI.FILL,
@@ -8,6 +8,12 @@
 	backgroundColor : '#0b0a2b',
 	layout : 'horizontal',
 	horizontalWrap : false
+},
+"#mainTabbedView":{
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	backgroundColor : '#284bff',
+	layout : 'horizontal'
 },
 "#menuButton":{
 	width : '18%',
@@ -27,4 +33,14 @@
 		fontSize : '20dp',
 		fontWeight : 'bold'
 	}
+},
+"#tabbedTableViews":{
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	layout : 'vertical',
+	backgroundColor : '#d2d9fc',
+	top : '5dp',
+	left : '5dp',
+	right : '5dp',
+	bottom : '5dp'
 }

@@ -1,6 +1,6 @@
-"#studyguides":{
+"#location":{
 	layout : 'vertical',
-	backgroundColor : '#d2d9fc'
+	backgroundColor : '#284bff'
 },
 "#mainTopBar":{
 	width : Ti.UI.FILL,
@@ -27,4 +27,23 @@
 		fontSize : '20dp',
 		fontWeight : 'bold'
 	}
+},
+"#map": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	region: {
+		latitude: 41.809936,
+		latitudeDelta: 0.01,
+		longitude: -87.996254,
+		longitudeDelta: 0.01
+	},
+	top : '5dp',
+	left : '5dp',
+	right : '5dp',
+	bottom : '5dp'
+},
+"#annotation1": {
+	title:"TBK", 
+	latitude:41.809936, 
+	longitude:-87.996254
 }

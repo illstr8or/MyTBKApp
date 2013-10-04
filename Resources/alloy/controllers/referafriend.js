@@ -1,17 +1,17 @@
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "studyguides";
+    this.__controllerPath = "referafriend";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.studyguides = Ti.UI.createView({
+    $.__views.referafriend = Ti.UI.createView({
         layout: "vertical",
         backgroundColor: "#d2d9fc",
-        id: "studyguides"
+        id: "referafriend"
     });
-    $.__views.studyguides && $.addTopLevelView($.__views.studyguides);
+    $.__views.referafriend && $.addTopLevelView($.__views.referafriend);
     $.__views.mainTopBar = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "60dp",
@@ -20,7 +20,7 @@ function Controller() {
         horizontalWrap: false,
         id: "mainTopBar"
     });
-    $.__views.studyguides.add($.__views.mainTopBar);
+    $.__views.referafriend.add($.__views.mainTopBar);
     $.__views.menuButton = Ti.UI.createView({
         width: "18%",
         height: Ti.UI.FILL,
@@ -45,7 +45,7 @@ function Controller() {
             fontWeight: "bold"
         },
         id: "mainLabel",
-        text: "Study Guides"
+        text: "Refer A Friend"
     });
     $.__views.mainTopBar.add($.__views.mainLabel);
     $.__views.mainShare = Ti.UI.createView({
@@ -61,10 +61,10 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    $.__views.__alloyId12 = Ti.UI.createTableView({
-        id: "__alloyId12"
+    $.__views.__alloyId11 = Ti.UI.createTableView({
+        id: "__alloyId11"
     });
-    $.__views.studyguides.add($.__views.__alloyId12);
+    $.__views.referafriend.add($.__views.__alloyId11);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.mainShare.addEventListener("click", function() {

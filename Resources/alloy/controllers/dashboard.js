@@ -8,7 +8,7 @@ function Controller() {
     var exports = {};
     $.__views.mainView = Ti.UI.createView({
         layout: "vertical",
-        backgroundColor: "#cacaca",
+        backgroundColor: "#d2d9fc",
         id: "mainView"
     });
     $.__views.mainView && $.addTopLevelView($.__views.mainView);
@@ -61,10 +61,26 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    $.__views.__alloyId0 = Ti.UI.createTableView({
-        id: "__alloyId0"
+    $.__views.mainTabbedView = Ti.UI.createView({
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL,
+        backgroundColor: "#284bff",
+        layout: "horizontal",
+        id: "mainTabbedView"
     });
-    $.__views.mainView.add($.__views.__alloyId0);
+    $.__views.mainView.add($.__views.mainTabbedView);
+    $.__views.tabbedTableViews = Ti.UI.createTableView({
+        width: Ti.UI.FILL,
+        height: Ti.UI.FILL,
+        layout: "vertical",
+        backgroundColor: "#d2d9fc",
+        top: "5dp",
+        left: "5dp",
+        right: "5dp",
+        bottom: "5dp",
+        id: "tabbedTableViews"
+    });
+    $.__views.mainTabbedView.add($.__views.tabbedTableViews);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.mainShare.addEventListener("click", function() {

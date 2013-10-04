@@ -39,8 +39,8 @@ function Controller() {
     $.__views.profileView = Ti.UI.createTableViewSection({
         id: "profileView"
     });
-    var __alloyId2 = [];
-    __alloyId2.push($.__views.profileView);
+    var __alloyId3 = [];
+    __alloyId3.push($.__views.profileView);
     $.__views.profile = Ti.UI.createTableViewRow({
         height: "75dp",
         backgroundImage: "/menu-row-item-bg-profile-off.png",
@@ -80,10 +80,10 @@ function Controller() {
         text: "Gena Nardini-Eiseman"
     });
     $.__views.profileContainer.add($.__views.profileLabel);
-    $.__views.__alloyId3 = Ti.UI.createTableViewSection({
-        id: "__alloyId3"
+    $.__views.__alloyId4 = Ti.UI.createTableViewSection({
+        id: "__alloyId4"
     });
-    __alloyId2.push($.__views.__alloyId3);
+    __alloyId3.push($.__views.__alloyId4);
     $.__views.headContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "39dp",
@@ -107,7 +107,7 @@ function Controller() {
         text: "myTBK"
     });
     $.__views.headContainer.add($.__views.rowHeader1);
-    $.__views.__alloyId3.headerView = $.__views.headContainer;
+    $.__views.__alloyId4.headerView = $.__views.headContainer;
     $.__views.events = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
@@ -115,7 +115,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "events"
     });
-    $.__views.__alloyId3.add($.__views.events);
+    $.__views.__alloyId4.add($.__views.events);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -153,7 +153,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "notifications"
     });
-    $.__views.__alloyId3.add($.__views.notifications);
+    $.__views.__alloyId4.add($.__views.notifications);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -191,7 +191,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "schedule"
     });
-    $.__views.__alloyId3.add($.__views.schedule);
+    $.__views.__alloyId4.add($.__views.schedule);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -222,10 +222,10 @@ function Controller() {
         text: "schedule"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.__alloyId5 = Ti.UI.createTableViewSection({
-        id: "__alloyId5"
+    $.__views.__alloyId6 = Ti.UI.createTableViewSection({
+        id: "__alloyId6"
     });
-    __alloyId2.push($.__views.__alloyId5);
+    __alloyId3.push($.__views.__alloyId6);
     $.__views.headContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "39dp",
@@ -249,7 +249,7 @@ function Controller() {
         text: "TRAINING"
     });
     $.__views.headContainer.add($.__views.rowHeader2);
-    $.__views.__alloyId5.headerView = $.__views.headContainer;
+    $.__views.__alloyId6.headerView = $.__views.headContainer;
     $.__views.studyguides = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
@@ -257,7 +257,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "studyguides"
     });
-    $.__views.__alloyId5.add($.__views.studyguides);
+    $.__views.__alloyId6.add($.__views.studyguides);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -288,10 +288,10 @@ function Controller() {
         text: "study guides"
     });
     $.__views.rowContainer.add($.__views.rowLabel);
-    $.__views.__alloyId7 = Ti.UI.createTableViewSection({
-        id: "__alloyId7"
+    $.__views.__alloyId8 = Ti.UI.createTableViewSection({
+        id: "__alloyId8"
     });
-    __alloyId2.push($.__views.__alloyId7);
+    __alloyId3.push($.__views.__alloyId8);
     $.__views.headContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "39dp",
@@ -315,7 +315,7 @@ function Controller() {
         text: "INFORMATION"
     });
     $.__views.headContainer.add($.__views.rowHeader3);
-    $.__views.__alloyId7.headerView = $.__views.headContainer;
+    $.__views.__alloyId8.headerView = $.__views.headContainer;
     $.__views.referafriend = Ti.UI.createTableViewRow({
         height: "43dp",
         backgroundImage: "/menu-row-item-bg-off.png",
@@ -323,7 +323,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "referafriend"
     });
-    $.__views.__alloyId7.add($.__views.referafriend);
+    $.__views.__alloyId8.add($.__views.referafriend);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -361,7 +361,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "location"
     });
-    $.__views.__alloyId7.add($.__views.location);
+    $.__views.__alloyId8.add($.__views.location);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -399,7 +399,7 @@ function Controller() {
         selectedColor: "#284bff",
         id: "contact"
     });
-    $.__views.__alloyId7.add($.__views.contact);
+    $.__views.__alloyId8.add($.__views.contact);
     $.__views.rowContainer = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: "43dp",
@@ -434,7 +434,7 @@ function Controller() {
         separatorStyle: "NONE",
         separatorColor: "#0b0a2b",
         backgroundColor: "#0b0a2b",
-        data: __alloyId2,
+        data: __alloyId3,
         id: "menuTable"
     });
     $.__views.menuView.add($.__views.menuTable);
