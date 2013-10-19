@@ -31,13 +31,12 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     var menuOpen = false;
-    var menuWidth = "262dp";
     var showhidemenu = function() {
         if (menuOpen) {
             moveTo = 0;
             menuOpen = false;
         } else {
-            moveTo = menuWidth;
+            moveTo = Alloy.Globals.menuWidth;
             menuOpen = true;
         }
         $.drawermainview.width = Ti.Platform.displayCaps.platformWidth;

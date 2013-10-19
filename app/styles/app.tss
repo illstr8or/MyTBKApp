@@ -1,10 +1,10 @@
 "Window": {
-	backgroundColor: '#fff'
+	backgroundColor : 'transparent'
 },
 "Label": {
-	color: '#000'
+	color : '#000'
 },
 "Annotation": {
-	animate:true,
-	pincolor:Ti.Map.ANNOTATION_RED
+	animate : true,
+	pincolor : Ti.Map.ANNOTATION_RED
 }

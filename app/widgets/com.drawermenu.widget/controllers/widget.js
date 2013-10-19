@@ -1,13 +1,11 @@
 var menuOpen = false;
 
-var menuWidth = '262dp';
-
 var showhidemenu = function(){
 	if (menuOpen){
 		moveTo = 0;
 		menuOpen = false;
 	} else {
-		moveTo = menuWidth;
+		moveTo = Alloy.Globals.menuWidth;
 		menuOpen = true;
 	};
 

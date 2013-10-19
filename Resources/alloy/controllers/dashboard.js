@@ -8,7 +8,7 @@ function Controller() {
     var exports = {};
     $.__views.mainView = Ti.UI.createView({
         layout: "vertical",
-        backgroundColor: "#d2d9fc",
+        backgroundColor: "#0b0a2b",
         id: "mainView"
     });
     $.__views.mainView && $.addTopLevelView($.__views.mainView);
@@ -61,31 +61,20 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    $.__views.mainTabbedView = Ti.UI.createView({
+    $.__views.subViews = Alloy.createController("subviews", {
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
-        backgroundColor: "#284bff",
-        layout: "horizontal",
-        id: "mainTabbedView"
+        layout: "composite",
+        id: "subViews",
+        __parentSymbol: $.__views.mainView
     });
-    $.__views.mainView.add($.__views.mainTabbedView);
-    $.__views.tabbedTableViews = Ti.UI.createTableView({
-        width: Ti.UI.FILL,
-        height: Ti.UI.FILL,
-        layout: "vertical",
-        backgroundColor: "#d2d9fc",
-        top: "5dp",
-        left: "5dp",
-        right: "5dp",
-        bottom: "5dp",
-        id: "tabbedTableViews"
-    });
-    $.__views.mainTabbedView.add($.__views.tabbedTableViews);
+    $.__views.subViews.setParent($.__views.mainView);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.mainShare.addEventListener("click", function() {
         alert("Share this view!");
     });
+    exports.sub = $.subViews;
     _.extend($, exports);
 }
 

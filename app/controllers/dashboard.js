@@ -10,3 +10,6 @@
 $.mainShare.addEventListener('click', function shareInfo(e){
 	alert("Share this view!");
 });
+
+exports.sub = $.subViews;
+

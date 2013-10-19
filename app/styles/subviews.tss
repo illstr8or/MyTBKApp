@@ -1,0 +1,28 @@
+
+".container": {
+	layout : 'composite'
+},
+
+"#events": {
+	top : 0,
+	left : 0,
+	bottom : 0,
+	right : 0,
+	zIndex : 3
+},
+
+"#notifications": {
+	top : 0,
+	left : 0,
+	bottom : 0,
+	right : 0,
+	zIndex : 2
+},
+
+"#schedule": {
+	top : 0,
+	left : 0,
+	bottom : 0,
+	right : 0,
+	zIndex : 1
+}

@@ -34,3 +34,10 @@ Alloy.Globals.isiOS7Plus = function()
 var iOS7 = Alloy.Globals.isiOS7Plus();
 Alloy.Globals.theTop = iOS7 ? 20 : 0;
 
+Alloy.Globals.oneThird = Ti.Platform.displayCaps.platformWidth / 3;
+
+// create a JavaScript alias to the platform-specific property
+var osname = Ti.Platform.osname;
+// Booleans identifying the platforms are handy too
+var menuOffset = (osname == 'android') ? 120 : 60;
+Alloy.Globals.menuWidth = Ti.Platform.displayCaps.platformWidth-menuOffset;

@@ -12,6 +12,10 @@ $.drawermenu.drawermenuview.add(menuView.getView()); // get view is an Alloy Met
 // ----
 // get main view as object
 var mainView = controls.getMainView();
+var sub = mainView.sub;
+var a = sub.suba.getView();
+var b = sub.subb.getView();
+var c = sub.subc.getView();
 mainView.menuButton.add(controls.getMenuButton({
 	h: '60dp',
 	w: '60dp'
@@ -110,10 +114,29 @@ function rowSelect(e) {
 				break;
 				
 			case 'events' :
-			case 'notifications' :
-			case 'schedule' :
 			
 				currentView = mainView.getView();
+				a.zIndex = 3;
+				b.zIndex = 2;
+				c.zIndex = 1;
+				
+				break;
+				
+			case 'notifications' :
+			
+				currentView = mainView.getView();
+				a.zIndex = 2;
+				b.zIndex = 3;
+				c.zIndex = 1;
+				
+				break;
+				
+			case 'schedule' :
+				
+				currentView = mainView.getView();
+				a.zIndex = 1;
+				b.zIndex = 2;
+				c.zIndex = 3;
 				
 				break;
 		

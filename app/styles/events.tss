@@ -1,4 +1,63 @@
+".container": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	layout : 'vertical'
+},
 
-".container" : {
-  
+"#customTabBar": {
+	width : Ti.UI.FILL,
+	height : '35dp',
+	layout : 'horizontal'
+},
+
+"#buttonTab": {
+	left : 0,
+	right : 0,
+	width : Alloy.Globals.oneThird,
+	height : Ti.UI.FILL,
+	backgroundColor : '#284bff'
+},
+
+"#btn": {
+	color : '#fff',
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+	verticalAlign : Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER,
+	font : {
+		fontSize : '14dp',
+		fontWeight : 'bold'
+	}
+},
+
+"#invisibleTabA": {
+	left : 0,
+	right : 0,
+	width : Alloy.Globals.oneThird,
+	height : Ti.UI.FILL,
+	backgroundColor : '#162b96'
+},
+
+"#invisibleTabB": {
+	left : 0,
+	right : 0,
+	width : Alloy.Globals.oneThird,
+	height : Ti.UI.FILL,
+	backgroundColor : '#162b96'
+},
+
+"#eventsView": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	backgroundColor : '#284bff',
+	layout : 'composite'
+},
+
+"#eventsTable": {
+	width : Ti.UI.FILL,
+	height : Ti.UI.FILL,
+	layout : 'vertical',
+	backgroundColor : '#d2d9fc',
+	top : '6dp',
+	left : '6dp',
+	right : '6dp',
+	bottom : '6dp'
 }

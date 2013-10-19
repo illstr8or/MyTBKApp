@@ -24,9 +24,24 @@ function Controller() {
                 break;
 
               case "events":
+                currentView = mainView.getView();
+                a.zIndex = 3;
+                b.zIndex = 2;
+                c.zIndex = 1;
+                break;
+
               case "notifications":
+                currentView = mainView.getView();
+                a.zIndex = 2;
+                b.zIndex = 3;
+                c.zIndex = 1;
+                break;
+
               case "schedule":
                 currentView = mainView.getView();
+                a.zIndex = 1;
+                b.zIndex = 2;
+                c.zIndex = 3;
             }
             $.drawermenu.drawermainview.add(currentView);
         }
@@ -39,7 +54,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.index = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         navBarHidden: true,
         exitOnClose: true,
         fullscreen: false,
@@ -58,6 +73,10 @@ function Controller() {
     var menuView = controls.getMenuView();
     $.drawermenu.drawermenuview.add(menuView.getView());
     var mainView = controls.getMainView();
+    var sub = mainView.sub;
+    var a = sub.suba.getView();
+    var b = sub.subb.getView();
+    var c = sub.subc.getView();
     mainView.menuButton.add(controls.getMenuButton({
         h: "60dp",
         w: "60dp"

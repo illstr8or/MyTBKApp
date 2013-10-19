@@ -9,7 +9,7 @@ module.exports = [ {
     priority: 1000.0001,
     key: "Window",
     style: {
-        backgroundColor: "#fff"
+        backgroundColor: "transparent"
     }
 }, {
     isApi: true,

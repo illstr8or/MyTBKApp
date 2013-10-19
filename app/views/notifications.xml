@@ -1,4 +1,20 @@
 <Alloy>
 	<View class="container">
+		<View id="customTabBar">
+			<View id="invisibleTabA">
+				<Label id="btn" text="events" />
+			</View>
+			<View id="buttonTab">
+				<Label id="btn" text="notifications" />
+			</View>
+			<View id="invisibleTabB">
+				<Label id="btn" text="schedule" />
+			</View>
+		</View>
+		<View id="notificationsView">
+			<TableView id="notificationsTable">
+				<TableViewRow title="Notifications" />
+			</TableView>
+		</View>
 	</View>
 </Alloy>

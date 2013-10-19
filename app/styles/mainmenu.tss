@@ -1,46 +1,50 @@
-"#menuView":{
+"#menuView": {
+	left : 0,
+	top : 0,
+	width : Alloy.Globals.menuWidth,
+	height : Ti.UI.FILL,
 	layout : 'vertical',
 	backgroundColor : '#0b0a2b'
 },
-"#menuTopBar":{
+"#menuTopBar": {
 	width : Ti.UI.FILL,
 	height : '60dp',
 	backgroundColor : '#0b0a2b',
 	layout : 'horizontal'
 },
-".menuTable":{
+".menuTable": {
 	separatorStyle :'NONE',
 	separatorColor : '#0b0a2b',
 	backgroundColor : '#0b0a2b'
 },
-".tableRow":{
+".tableRow": {
 	height : '43dp',
 	backgroundImage : '/menu-row-item-bg-off.png',
 	backgroundRepeat : true,
 	selectedColor : '#284bff'
 },
-".profileRow":{
+".profileRow": {
 	height : '75dp',
 	backgroundImage : '/menu-row-item-bg-profile-off.png',
 	backgroundRepeat : true,
 	selectedColor : '#284bff'
 },
-".tableHeader":{
+".tableHeader": {
 	height : '39dp',
 	width : Ti.UI.FILL,
 	layout : 'horizontal'
 },
-"#profileContainer":{
+"#profileContainer": {
 	width : Ti.UI.FILL,
 	height : '75dp',
 	layout : 'horizontal'
 },
-"#rowContainer":{
+"#rowContainer": {
 	width : Ti.UI.FILL,
 	height : '43dp',
 	layout : 'horizontal'
 },
-"#headContainer":{
+"#headContainer": {
 	width : Ti.UI.FILL,
 	height : '39dp',
 	backgroundImage : '/menu-header-item-bg.png',
@@ -48,7 +52,7 @@
 	layout : 'horizontal',
 	horizontalWrap : false
 },
-"#settingsButton":{
+"#settingsButton": {
 	left : '12dp',
 	width : '60dp',
 	height : '60dp',

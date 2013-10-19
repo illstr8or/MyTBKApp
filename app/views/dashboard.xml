@@ -9,8 +9,6 @@
 				<ImageView id="share" width="30dp" height="30dp" image="/share-icon.png" />
 			</View>
 		</View>
-		<View id="mainTabbedView">
-			<TableView id="tabbedTableViews"></TableView>
-		</View>
+		<Require src="subviews" id="subViews" />
 	</View>
 </Alloy>

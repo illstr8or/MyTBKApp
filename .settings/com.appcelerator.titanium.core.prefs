@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+provisioning_profiles/development/2BBFA4B8-1946-469F-9C32-05DE839D8FE9/appid=*
+provisioning_profiles/development/2BBFA4B8-1946-469F-9C32-05DE839D8FE9/name=iOS Team Provisioning Profile\: *
+provisioning_profiles/development/2BBFA4B8-1946-469F-9C32-05DE839D8FE9/uuid=2BBFA4B8-1946-469F-9C32-05DE839D8FE9
 provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/appid=com.appdacity.mytsd
 provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/name=Appdacity Dev Profile
 provisioning_profiles/development/5113596D-A8A0-4D31-A6CE-258EAC4EE834/uuid=5113596D-A8A0-4D31-A6CE-258EAC4EE834

@@ -1,0 +1,7 @@
+<Alloy>
+	<View class="container">
+		<Require src="schedule" id="schedule" />
+		<Require src="notifications" id="notifications"/>
+		<Require src="events" id="events"/>
+	</View>
+</Alloy>
