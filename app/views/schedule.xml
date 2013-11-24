@@ -1,4 +1,5 @@
 <Alloy>
+	<Collection src="schedules">
 	<View class="container">
 		<View id="customTabBar">
 			<View id="invisibleTabA">
@@ -12,8 +13,8 @@
 			</View>
 		</View>
 		<View id="scheduleView">
-			<TableView id="scheduleTable">
-				<TableViewRow title="Schedule" />
+			<TableView id="scheduleTable" dataCollection="schedules">
+				<TableViewRow title="{title}" />
 			</TableView>
 		</View>
 	</View>
