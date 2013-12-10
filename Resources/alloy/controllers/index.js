@@ -121,7 +121,20 @@ function Controller() {
     Ti.Gesture.addEventListener("orientationchange", function() {
         $.drawermenu.handleRotation();
     });
-    $.index.open();
+    var fb = Alloy.Globals.Facebook;
+    fb.appid = Alloy.CFG.FACEBOOK_APP_ID;
+    fb.permissions = [ "user_events" ];
+    fb.forceDialogAuth = false;
+    if (fb.loggedIn) $.index.open(); else {
+        fb.addEventListener("login", function(e) {
+            if (e.success) {
+                $.index.open();
+                alert("Facebook Success!");
+            } else e.error ? alert("Facebook error: " + e.error) : alert("Unknown Facebook error");
+        });
+        fb.authorize();
+        alert("Time to log in to Facebook");
+    }
     _.extend($, exports);
 }
 

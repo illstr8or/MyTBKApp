@@ -10,15 +10,10 @@ function Controller() {
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
-    $.__views.title = Ti.UI.createLabel({
-        color: "#000",
-        id: "title"
-    });
-    $.__views.row.add($.__views.title);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};
-    $.title.text = args.title;
+    $.row.text = args.title;
     _.extend($, exports);
 }
 

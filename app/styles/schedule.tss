@@ -59,5 +59,10 @@
 	top : '6dp',
 	left : '6dp',
 	right : '6dp',
-	bottom : '6dp'
+	bottom : '6dp',
+	separatorColor : 'transparent',
+	separatorInsets : {
+		left : 0,
+		right : 0
+	}
 }

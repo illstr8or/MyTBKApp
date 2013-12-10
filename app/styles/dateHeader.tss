@@ -1,0 +1,18 @@
+
+".container": {
+	width : Ti.UI.FILL,
+    backgroundColor : '#0b0a2b',
+    height : '22dp',
+    opacity : 0.8
+},
+"#date": {
+	color : '#fff',
+    font : {
+    	fontSize:'12dp'
+    },
+    height : Ti.UI.SIZE,
+    width : Ti.UI.SIZE,
+    top : '3dp',
+    left : '6dp',
+    textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER
+}

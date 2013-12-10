@@ -61,10 +61,10 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    $.__views.__alloyId15 = Ti.UI.createTableView({
-        id: "__alloyId15"
+    $.__views.__alloyId13 = Ti.UI.createTableView({
+        id: "__alloyId13"
     });
-    $.__views.referafriend.add($.__views.__alloyId15);
+    $.__views.referafriend.add($.__views.__alloyId13);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.mainShare.addEventListener("click", function() {

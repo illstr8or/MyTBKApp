@@ -61,7 +61,7 @@ function Controller() {
         image: "/share-icon.png"
     });
     $.__views.mainShare.add($.__views.share);
-    var __alloyId4 = [];
+    var __alloyId2 = [];
     $.__views.annotation1 = Ti.Map.createAnnotation({
         animate: true,
         pincolor: Ti.Map.ANNOTATION_RED,
@@ -70,7 +70,7 @@ function Controller() {
         longitude: -87.996254,
         id: "annotation1"
     });
-    __alloyId4.push($.__views.annotation1);
+    __alloyId2.push($.__views.annotation1);
     $.__views.map = Ti.Map.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
@@ -84,7 +84,7 @@ function Controller() {
         left: "5dp",
         right: "5dp",
         bottom: "5dp",
-        annotations: __alloyId4,
+        annotations: __alloyId2,
         ns: Ti.Map,
         id: "map"
     });

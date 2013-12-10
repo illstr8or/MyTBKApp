@@ -12,10 +12,18 @@
 				<Label id="btn" text="schedule" />
 			</View>
 		</View>
+		<!-- Main table for tasks 
+                 Use model-view binding to render the rows fo this table
+                 based on the models in the given collection. "dataCollection"
+                 represents the collection used to populate this table. 
+                 "dataFilter" is a function used to filter the list of 
+                 models processed within the collection. "dataTransform"
+                 is a function that will be executed on each model as it
+                 is rendered as a row. It gives the opportunity to modify
+                 the model's values before they are applied to each row.
+        -->
 		<View id="scheduleView">
-			<TableView id="scheduleTable" dataCollection="schedules">
-				<TableViewRow title="{title}" />
-			</TableView>
+			<TableView id="scheduleTable"/>
 		</View>
 	</View>
 </Alloy>

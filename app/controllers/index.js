@@ -159,4 +159,25 @@ Ti.Gesture.addEventListener('orientationchange', function(e) {
 	$.drawermenu.handleRotation();
 });
 
-$.index.open();
+var fb = Alloy.Globals.Facebook;
+fb.appid = Alloy.CFG.FACEBOOK_APP_ID;
+fb.permissions = ['user_events']; // Permissions your app needs
+fb.forceDialogAuth = false; // has to be false or Android crashes
+
+if (!fb.loggedIn) {
+	fb.addEventListener('login', function(e){
+	    if (e.success) {
+	        $.index.open();
+	        alert('Facebook Success!');
+	    } else if (e.error) {
+	        alert('Facebook error: ' + e.error);
+	    } else {
+	        alert('Unknown Facebook error');
+	    }
+	});
+	fb.authorize();
+    alert('Time to log in to Facebook');
+} else {
+    $.index.open();
+    //alert('Facebook already logged in!');
+}

@@ -43,3 +43,6 @@ var menuOffset = (osname == 'android') ? 120 : 60;
 Alloy.Globals.menuWidth = Ti.Platform.displayCaps.platformWidth-menuOffset;
 
 Alloy.Collections.schedules = Alloy.createCollection('schedules');
+
+// Loads the Facebook module, which can be referenced by Alloy.Globals.Facebook
+Alloy.Globals.Facebook = require('facebook');

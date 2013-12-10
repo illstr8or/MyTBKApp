@@ -3,13 +3,13 @@ require('behave').andSetup(this);
 
 describe('SQLREST: create a model', function() {
 	it.eventually('*** creates a new model', function(done) {
-		var model = Alloy.createModel('events', {
+		var model = Alloy.createModel('schedules', {
             end : "2013-11-25T19:15:00.000-06:00",
 			start : "2013-11-25T18:30:00.000-06:00",
             title : "Group Class \(All ages, all ranks\)",
             details : "something",
-            authorName : "genamex@gmail.com",
-            authorEmail : "genamex@gmail.com"
+            displayName : "genamex@gmail.com",
+            email : "genamex@gmail.com"
 		});
 		model.save({}, {
 			success : function(returnModel) {
@@ -24,8 +24,8 @@ describe('SQLREST: create a model', function() {
 						success: function(_returnModel){
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(_returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							_done();
 						},
@@ -33,8 +33,8 @@ describe('SQLREST: create a model', function() {
 							Ti.API.error("fetch error");
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(_returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							_done();
 						}
@@ -55,8 +55,8 @@ describe('SQLREST: create a model', function() {
 						success: function(_returnModel){
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(_returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							_done();
 						},
@@ -64,8 +64,8 @@ describe('SQLREST: create a model', function() {
 							Ti.API.error("fetch error");
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(_returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							_done();
 						}
@@ -81,13 +81,13 @@ describe('SQLREST: create a model', function() {
 
 describe('SQLREST: create and update a model', function() {
 	it.eventually('*** creates a new model to update', function(done) {
-		var model = Alloy.createModel('events', {
+		var model = Alloy.createModel('schedules', {
 			end: "2013-11-26T17:15:00.000-06:00",
     		startTime: "2013-11-26T16:30:00.000-06:00",
 			title : "Little Champions \(Ages 4-7\)",
             details : "something else",
-            authorName : "genamex@gmail.com",
-            authorEmail : "genamex@gmail.com"
+            displayName : "genamex@gmail.com",
+            email : "genamex@gmail.com"
 		});
 		model.save({}, {
 			success : function(returnModel) {
@@ -102,19 +102,19 @@ describe('SQLREST: create and update a model', function() {
 						success: function(_returnModel){
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							//UPDATE the model
 							it.eventually('*** updates the created model', function(_donedone) {
-								var model = Alloy.createModel('events', {
+								var model = Alloy.createModel('schedules', {
 									id : returnModel.id, //when ID is defined, backbone will update rather than create
 									end: "2013-11-26T17:15:00.000-06:00",
 						    		start: "2013-11-26T16:30:00.000-06:00",
 									title : "Little Champions \(Ages 4-7\)",
 						            details : "something else",
-						            authorName : "genamex@gmail.com",
-						            authorEmail : "genamex@gmail.com"
+						            displayName : "genamex@gmail.com",
+						            email : "genamex@gmail.com"
 								});
 
 								model.save({}, {
@@ -145,19 +145,19 @@ describe('SQLREST: create and update a model', function() {
 							// validate it
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							//UPDATE the model
 							it.eventually('*** updates the created model', function(_donedone) {
-								var model = Alloy.createModel('events', {
+								var model = Alloy.createModel('schedules', {
 									id : returnModel.id, //when ID is defined, backbone will update rather than create
 									end: "2013-11-26T17:15:00.000-06:00",
 						    		start: "2013-11-26T16:30:00.000-06:00",
 									title : "Little Champions \(Ages 4-7\)",
 						            details : "something else",
-						            authorName : "genamex@gmail.com",
-						            authorEmail : "genamex@gmail.com"
+						            displayName : "genamex@gmail.com",
+						            email : "genamex@gmail.com"
 								});
 
 								model.save({}, {
@@ -201,19 +201,19 @@ describe('SQLREST: create and update a model', function() {
 						success: function(_returnModel){
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							//UPDATE the model
 							it.eventually('*** updates the created model', function(_donedone) {
-								var model = Alloy.createModel('events', {
+								var model = Alloy.createModel('schedules', {
 									id : returnModel.id, //when ID is defined, backbone will update rather than create
 									end: "2013-11-26T17:15:00.000-06:00",
 						    		start: "2013-11-26T16:30:00.000-06:00",
 									title : "Little Champions \(Ages 4-7\)",
 						            details : "something else",
-						            authorName : "genamex@gmail.com",
-						            authorEmail : "genamex@gmail.com"
+						            displayName : "genamex@gmail.com",
+						            email : "genamex@gmail.com"
 								});
 
 								model.save({}, {
@@ -244,19 +244,19 @@ describe('SQLREST: create and update a model', function() {
 							// validate it
 							expect(model.id).notToBe(null);
 							expect(model.id).toBe(returnModel.id);
-							expect(model.get("authorName")).toBe('genamex@gmail.com');
-							expect(model.get("authorEmail")).toBe("genamex@gmail.com");
+							expect(model.get("displayName")).toBe('genamex@gmail.com');
+							expect(model.get("email")).toBe("genamex@gmail.com");
 
 							//UPDATE the model
 							it.eventually('*** updates the created model', function(_donedone) {
-								var model = Alloy.createModel('events', {
+								var model = Alloy.createModel('schedules', {
 									id : returnModel.id, //when ID is defined, backbone will update rather than create
 									end: "2013-11-26T17:15:00.000-06:00",
 						    		start: "2013-11-26T16:30:00.000-06:00",
 									title : "Little Champions \(Ages 4-7\)",
 						            details : "something else",
-						            authorName : "genamex@gmail.com",
-						            authorEmail : "genamex@gmail.com"
+						            displayName : "genamex@gmail.com",
+						            email : "genamex@gmail.com"
 								});
 
 								model.save({}, {
@@ -294,7 +294,7 @@ describe('SQLREST: create and update a model', function() {
 
 describe('SQLREST: find models', function() {
 	it.eventually('*** fetches all models', function(done) {
-		var collection = Alloy.createCollection('events');
+		var collection = Alloy.createCollection('schedules');
 		collection.fetch({
 			success:function(models){
 				expect(collection).notToBe(null);

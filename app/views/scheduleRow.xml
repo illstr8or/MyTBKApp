@@ -1,0 +1,9 @@
+<Alloy>
+	<TableViewRow id="row">
+		<View id="rowView">
+			<Label id="startTime"/>
+			<View id="sep"/>
+			<Label id="title"/>
+		</View>
+	</TableViewRow>
+</Alloy>

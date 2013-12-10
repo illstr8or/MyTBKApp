@@ -91,12 +91,12 @@ function Controller() {
         id: "notificationsView"
     });
     $.__views.notifications.add($.__views.notificationsView);
-    $.__views.__alloyId12 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId10 = Ti.UI.createTableViewRow({
         title: "Notifications",
-        id: "__alloyId12"
+        id: "__alloyId10"
     });
-    var __alloyId13 = [];
-    __alloyId13.push($.__views.__alloyId12);
+    var __alloyId11 = [];
+    __alloyId11.push($.__views.__alloyId10);
     $.__views.notificationsTable = Ti.UI.createTableView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
@@ -106,7 +106,7 @@ function Controller() {
         left: "6dp",
         right: "6dp",
         bottom: "6dp",
-        data: __alloyId13,
+        data: __alloyId11,
         id: "notificationsTable"
     });
     $.__views.notificationsView.add($.__views.notificationsTable);

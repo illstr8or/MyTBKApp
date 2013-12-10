@@ -1,19 +1,4 @@
 function Controller() {
-    function __alloyId22() {
-        __alloyId22.opts || {};
-        var models = __alloyId21.models;
-        var len = models.length;
-        var rows = [];
-        for (var i = 0; len > i; i++) {
-            var __alloyId19 = models[i];
-            __alloyId19.__transform = {};
-            var __alloyId20 = Ti.UI.createTableViewRow({
-                title: "undefined" != typeof __alloyId19.__transform["title"] ? __alloyId19.__transform["title"] : __alloyId19.get("title")
-            });
-            rows.push(__alloyId20);
-        }
-        $.__views.scheduleTable.setData(rows);
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "schedule";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -116,14 +101,15 @@ function Controller() {
         left: "6dp",
         right: "6dp",
         bottom: "6dp",
+        separatorColor: "transparent",
+        separatorInsets: {
+            left: 0,
+            right: 0
+        },
         id: "scheduleTable"
     });
     $.__views.scheduleView.add($.__views.scheduleTable);
-    var __alloyId21 = Alloy.Collections["schedules"] || schedules;
-    __alloyId21.on("fetch destroy change add remove reset", __alloyId22);
-    exports.destroy = function() {
-        __alloyId21.off("fetch destroy change add remove reset", __alloyId22);
-    };
+    exports.destroy = function() {};
     _.extend($, $.__views);
     exports.buttonTab1 = $.buttonTab;
     exports.buttonTab2 = $.invisibleTabA;
@@ -132,7 +118,35 @@ function Controller() {
     classSchedule.fetch({
         success: function(data) {
             Ti.API.info("[schedule.js] SCHEDULE COLLECTION : DATA SUCCESS");
-            Ti.API.info("*** " + JSON.stringify(data));
+            var rows = [];
+            var section = null;
+            var lastDate = "";
+            _.each(data.models, function(element) {
+                var date = element.get("date");
+                if (!section || date !== lastDate) {
+                    section && rows.push(section);
+                    var header = Alloy.createController("dateHeader", {
+                        dateTxt: date
+                    });
+                    section = Ti.UI.createTableViewSection({
+                        headerView: header.getView()
+                    });
+                    lastDate = date;
+                }
+                var row = Alloy.createController("scheduleRow", {
+                    title: element.get("title"),
+                    start: element.get("start"),
+                    end: element.get("end"),
+                    details: element.get("details"),
+                    by: element.get("displayName"),
+                    email: element.get("email")
+                });
+                section.add(row.getView());
+                Ti.API.info("*** " + date);
+            });
+            rows.push(section);
+            $.scheduleTable.setData(rows);
+            Ti.API.info("*** " + JSON.stringify(classSchedule.models));
         },
         error: function() {
             Ti.API.error("[schedule.js] SCHEDULE COLLECTION : ERROR *** there was problem fetching collection data");

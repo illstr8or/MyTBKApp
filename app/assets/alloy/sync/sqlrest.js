@@ -306,7 +306,7 @@ function Sync(method, model, opts) {
 			// convert to string for API call
 			params.data = JSON.stringify(model.toJSON());
 			if (DEBUG) {
-				Ti.API.info("[SQL REST API] options: ");
+				Ti.API.info("[SQL REST API - CREATE] options: ");
 				Ti.API.info(params);
 			}
 			apiCall(params, function(_response) {
@@ -355,7 +355,7 @@ function Sync(method, model, opts) {
 			}
 
 			if (DEBUG) {
-				Ti.API.info("[SQL REST API] options: ");
+				Ti.API.info("[SQL REST API - READ] options: ");
 				Ti.API.info(params);
 			}
 
@@ -419,7 +419,7 @@ function Sync(method, model, opts) {
 
 			params.data = JSON.stringify(model.toJSON());
 			if (DEBUG) {
-				Ti.API.info("[SQL REST API] options: ");
+				Ti.API.info("[SQL REST API - UPDATE] options: ");
 				Ti.API.info(params);
 			}
 			apiCall(params, function(_response) {
@@ -449,7 +449,7 @@ function Sync(method, model, opts) {
 			params.url = params.url + '/' + model.id;
 
 			if (DEBUG) {
-				Ti.API.info("[SQL REST API] options: ");
+				Ti.API.info("[SQL REST API - DELETE] options: ");
 				Ti.API.info(params);
 			}
 			apiCall(params, function(_response) {

@@ -91,12 +91,6 @@ function Controller() {
         id: "eventsView"
     });
     $.__views.events.add($.__views.eventsView);
-    $.__views.__alloyId1 = Ti.UI.createTableViewRow({
-        title: "Events",
-        id: "__alloyId1"
-    });
-    var __alloyId2 = [];
-    __alloyId2.push($.__views.__alloyId1);
     $.__views.eventsTable = Ti.UI.createTableView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
@@ -106,15 +100,73 @@ function Controller() {
         left: "6dp",
         right: "6dp",
         bottom: "6dp",
-        data: __alloyId2,
         id: "eventsTable"
     });
     $.__views.eventsView.add($.__views.eventsTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var moment = require("alloy/moment");
     exports.buttonTab1 = $.buttonTab;
     exports.buttonTab2 = $.invisibleTabA;
     exports.buttonTab3 = $.invisibleTabB;
+    var fb = Alloy.Globals.Facebook;
+    fb.appid = Alloy.CFG.FACEBOOK_APP_ID;
+    fb.permissions = [ "user_events" ];
+    fb.authorize();
+    fb.loggedIn ? fb.requestWithGraphPath("appdacity/events", {
+        fields: "picture,name,start_time"
+    }, "GET", function(et) {
+        if (et.success) {
+            var rows = [];
+            var evs = JSON.parse(et.result);
+            for (var a = evs.data.length - 1; a >= 0; a--) {
+                Ti.API.info("[events.js] FB RESULT = " + moment(evs.data[a].start_time).format("ddd, MMM D, YYYY, h:mm a"));
+                var evrow = Ti.UI.createTableViewRow({
+                    layout: "horizontal",
+                    evid: evs.data[a].id,
+                    height: "70dp"
+                });
+                var evimage = Ti.UI.createImageView({
+                    image: evs.data[a].picture.data.url,
+                    width: "60dp",
+                    height: "60dp"
+                });
+                var evview = Ti.UI.createView({
+                    layout: "vertical",
+                    width: Ti.UI.SIZE,
+                    height: Ti.UI.FILL
+                });
+                var evlevel = Ti.UI.createLabel({
+                    text: evs.data[a].name,
+                    left: 10,
+                    color: "#162b96",
+                    font: {
+                        fontSize: "15dp",
+                        fontWeight: "bold"
+                    },
+                    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+                    verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+                });
+                evview.add(evlevel);
+                var evDate = Ti.UI.createLabel({
+                    text: moment(evs.data[a].start_time).format("ddd, MMM D, YYYY, h:mm a"),
+                    left: 10,
+                    color: "#000",
+                    font: {
+                        fontSize: "12dp",
+                        fontWeight: "bold"
+                    },
+                    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+                    verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+                });
+                evview.add(evDate);
+                evrow.add(evimage);
+                evrow.add(evview);
+                rows.push(evrow);
+            }
+            $.eventsTable.setData(rows);
+        } else et.error ? alert("There was a problem getting Facebook data > " + et.error) : alert("Unknown Facebook response");
+    }) : alert("Facebook Not Logged In");
     _.extend($, exports);
 }
 
