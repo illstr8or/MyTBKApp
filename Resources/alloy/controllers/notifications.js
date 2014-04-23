@@ -115,6 +115,21 @@ function Controller() {
     exports.buttonTab1 = $.buttonTab;
     exports.buttonTab2 = $.invisibleTabA;
     exports.buttonTab3 = $.invisibleTabB;
+    var urbanairport = require("urbanairport");
+    urbanairport.register({
+        debug: true,
+        sound: true,
+        vibrate: true,
+        badge: true,
+        alert: true,
+        autoBadge: false,
+        compatibility: true,
+        alias: "tidev",
+        tags: [ "testingtesting", "appcelerator", "my-tags" ],
+        callback: function(e) {
+            "error" === e.type ? alert("Sorry, no push for you: " + e.error) : "success" === e.type ? alert("Your token is: " + e.deviceToken) : "callback" === e.type && alert(e.message);
+        }
+    });
     _.extend($, exports);
 }
 

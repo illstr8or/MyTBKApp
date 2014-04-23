@@ -10,6 +10,7 @@ function Controller() {
         height: "50dp",
         backgroundColor: "transparent",
         focusable: false,
+        selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);

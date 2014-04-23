@@ -7,7 +7,7 @@ function caller(e) {
     _.isFunction(callback) && callback(e);
 }
 
-var _ = _ || require("alloy")._, OS_IOS = false, OS_ANDROID = !OS_IOS && true;
+var _ = _ || require("alloy")._, OS_IOS = true, OS_ANDROID = !OS_IOS && false;
 
 var urbanairship = require("ti.urbanairship");
 
